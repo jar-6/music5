@@ -32,6 +32,7 @@ const store = new Vuex.Store({
     isShowPlayer:false,
     isShowSearch:false,
     num:0,
+    sliderNum:0,
     resnum:'',
     songNowTime:'00:00',
     songAllTime:'00:00',
@@ -71,7 +72,22 @@ const store = new Vuex.Store({
   },
 
   mutations:{
-
+/*changeSliderNum(state){
+  setInterval(function(){
+    if(state.sliderNum<=3){
+      state.sliderNum=state.sliderNum+0.5;
+    }
+    else{state.sliderNum=1}
+  }
+    ,5000)
+},*/
+changeSliderNum(state){
+  setInterval(function(){
+setTimeout(function(){state.sliderNum=1},0);
+setTimeout(function(){state.sliderNum=2},5000);
+setTimeout(function(){state.sliderNum=0},10000)
+  },15000)
+},
     numPlus(state){
       
       if(state.num<state.songList.length-1){state.num++}

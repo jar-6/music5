@@ -50,7 +50,7 @@
       <div class="weather down-cd"  v-if="isShowWeather&&weather.length!==0">
     <p>{{weather.type}}</p>
   <p>{{weatherLow}}~{{weatherHigh}}</p>
-  <p>{{weather.fengli}} {{weather.fengxiang}}</p>
+  <p>{{weather.fengxiang}} {{weatherWind}}</p>
    </div>
 
          <p class="down-cd" v-if="!isShowWeather">{{songNowTime}} /{{songAllTime}}</p>
@@ -90,6 +90,9 @@ export default {
     songAllTimeRaw(){return this.$store.state.songAllTimeRaw},
         city(){return this.$store.state.city},
     weather(){return this.$store.state.weather},
+    weatherWind(){
+      return this.$store.state.weather.fengli.substring(this.$store.state.weather.fengli.length-5,this.$store.state.weather.fengli.length-3)
+    },
     weatherLow(){
       return this.$store.state.weather.low.substring(2,this.$store.state.weather.low.length)
     },

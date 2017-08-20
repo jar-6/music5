@@ -17,7 +17,7 @@
       @timeupdate="timeUpDate" 
       @ended="next" 
       id="audio"
-      autoplay><!-- autoplay -->
+      autoplay>
     </audio>
   </div>
 </template>
