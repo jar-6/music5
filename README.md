@@ -1,5 +1,5 @@
 # 天气音乐
-
+demo地址：http://fan-jiaxing.com/vue-weather-music/
 
 ![](http://wx4.sinaimg.cn/mw1024/00627l70ly1fix6y1f4w0j308e0dvgpq.jpg)    
 
