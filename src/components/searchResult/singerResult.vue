@@ -56,10 +56,10 @@ export default {
         this.$store.commit("isLikeReset")
         this.$store.commit("numReset")
        this.$store.state.isPlay=true;
-        console.log("addPlay",this.$store.state.isPlay);
+   
       },
 lookSinger(singerMid){
-     // console.log(singerMid)//000kfe022gdaAn
+  
       this.$http.jsonp('https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg', 
         {
           params: {
@@ -87,8 +87,7 @@ lookSinger(singerMid){
     
           this.$store.state.singerInfo=res.data.data;
           ;
-          console.log("singerInfoList",this.$store.state.singerInfo.list
-);
+          
           })
         },
   }

@@ -53,13 +53,13 @@ export default {
     this.$store.state.isShowSearch=true;
     this.$store.state.isShowIndex=false;
     this.$store.state.isShowPlayer=false;
-    console.log(3);
+ 
    },
       
 
 },
 created: function (){
-    console.log('ready');
+
            this.$http.jsonp('https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg', 
         {
           params: {

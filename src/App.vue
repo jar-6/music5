@@ -67,7 +67,7 @@ export default {
     var allTime=parseInt(document.getElementById('audio').duration);
     var timeArr=[nowTime,allTime];
     this.$store.commit('storeTimeUpDate',timeArr);
-    console.log()
+  
   },
 },
   watch:{

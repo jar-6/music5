@@ -42,7 +42,7 @@ export default {
         this.$store.commit("isLikeReset")
         this.$store.commit("numReset")
        this.$store.state.isPlay=true;
-        console.log("addPlay",this.$store.state.songList);
+       
         }
       },
 

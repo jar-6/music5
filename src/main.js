@@ -72,21 +72,15 @@ const store = new Vuex.Store({
   },
 
   mutations:{
-/*changeSliderNum(state){
-  setInterval(function(){
-    if(state.sliderNum<=3){
-      state.sliderNum=state.sliderNum+0.5;
-    }
-    else{state.sliderNum=1}
-  }
-    ,5000)
-},*/
+
 changeSliderNum(state){
+  setTimeout(function(){state.sliderNum=1},4000);
+  setTimeout(function(){state.sliderNum=2},8000);
   setInterval(function(){
-setTimeout(function(){state.sliderNum=1},0);
-setTimeout(function(){state.sliderNum=2},5000);
-setTimeout(function(){state.sliderNum=0},10000)
-  },15000)
+setTimeout(function(){state.sliderNum=0},0);
+setTimeout(function(){state.sliderNum=1},4000);
+setTimeout(function(){state.sliderNum=2},8000)
+  },12000)
 },
     numPlus(state){
       

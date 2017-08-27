@@ -86,11 +86,11 @@ export default {
       this.song=null;
       this.$store.commit("listReset",'songResultList');
       this.$store.commit("listReset",'singerResultList');
-      console.log('cancel')
+     
     },
     
   search(songkey){
-    console.log(this.keyCode)
+   
     songkey=this.songkey
     this.searchSong(songkey);
     this.searchSinger(songkey);},   
@@ -122,33 +122,13 @@ searchSong(songkey){
         function(res){
           
           this.$store.state.songResultList=res.data.data.song.list
-          console.log('search',this.$store.state.songResultList )
+          
         },
         function(){alert("没有找到该歌曲")}
         );
         
       },
  
-
-      test(){
-      this.$http.jsonp('https://c.y.qq.com/rcmusic/fcgi-bin/fcg_iphone_music_rec_songlist', 
-        {
-          params: {
-        format:'jsonp',
-       cid:338,
-        ct:20,
-        uin:10000,
-        g_tk:1885845528,
-songid:1761007//'1761007''100893820'
-          },
-          jsonp:'jsonpCallback'
-        }).then(
-        function(res){console.log('start test')
-          var list=res.data.list
-          console.log(list);
-
-          })
-        },
 
 searchRain(){
   this.$http.jsonp('https://c.y.qq.com/soso/fcgi-bin/client_search_cp', 
@@ -177,7 +157,7 @@ searchRain(){
       for(var j=0;j<this.$store.state.songResultList.length;j++){
         var nowId=this.$store.state.songResultList[j].id
         var nowName=this.$store.state.songResultList[j].name
-        console.log("searchSong",nowId,nowName);
+       
         this.$http.jsonp('https://c.y.qq.com/rcmusic/fcgi-bin/fcg_iphone_music_rec_songlist', 
         {
           params: {
@@ -201,7 +181,7 @@ searchRain(){
             }
           }
         })
-//console.log('weatherList',weatherList)
+
       }
 
         },
@@ -226,7 +206,6 @@ searchRain(){
         function(res){
           this.$store.state.singerResultList=res.data.data.singer.itemlist
          
-          console.log()
         },
         
         );

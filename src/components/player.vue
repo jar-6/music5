@@ -140,17 +140,7 @@ showWeather(){this.isShowWeather=!this.isShowWeather;
   },
   created: function (){
 
-console.log('readyWeather');
-      this.$http.jsonp('http://ip.chinaz.com/getip.aspx', 
-        {
-          params: {
-            jsonp: 'callback',
-          }
-        }
-      ).then(
-        function(res){
-
-          var cityname=res.data.address.split("市")[0];
+          var cityname="北京"
           this.$store.state.city=cityname;
           this.$http.jsonp('http://wthrcdn.etouch.cn/weather_mini', 
             {
@@ -160,14 +150,11 @@ console.log('readyWeather');
             }
           ).then(
               function(res){
-console.log(this.$store.state.weather.type.slice(-1));
                 this.$store.state.weather=res.data.data.forecast[0];
                },
-              function(){console.log('no')}
+              function(){console.log('不明天气')}
           );
-        },
-            function(){console.log('no')}
-      );
+        
      
   },
   
@@ -220,6 +207,7 @@ console.log(this.$store.state.weather.type.slice(-1));
 }
 .icon-weather{
   right: 10px;
+
 }
 .player-header p{
   font-size: 35px;

@@ -2,23 +2,20 @@
     <div class="commend" v-show="isShowIndex">
 
       <h5 class="commend-title">推荐</h5>
-       <!--  <div class="sliderlist" v-show="sliderList.length!==0">
-          
-           <img 
-              v-bind:src="sliderList[0].picUrl"
-              class="radiolist-img"/> 
-         
-        </div> -->
+ 
     <div class="sliderlist" v-if="sliderList.length!==0">
+
+            <div v-for="(value,index) in sliderList">
+        <a v-bind:href="value.linkUrl" target="view_frame">
       <transition name="slider">
-        <img v-bind:src="sliderList[0].picUrl" class="slider-img" v-show="sliderNum===0||sliderNum===3"/>
+      
+        
+          <img v-bind:src="value.picUrl" class="slider-img" v-show="sliderNum===index||sliderNum===index+5"/>
+        
       </transition>
-      <transition name="slider">
-        <img v-bind:src="sliderList[1].picUrl" class="slider-img opacity" v-show="sliderNum===1"/>
-      </transition>
-      <transition name="slider">
-        <img v-bind:src="sliderList[2].picUrl" class="slider-img" v-show="sliderNum===2"/>
-      </transition>
+      </a>
+      </div>
+
     </div>
     <div>
       <div @click='getSliderNum(0)' class="slider-button">
@@ -70,6 +67,7 @@ this.$store.state.sliderNum=num;
   },
     created: function (){
 this.$store.commit("changeSliderNum");
+
 }
 }
 </script>
@@ -87,7 +85,7 @@ this.$store.commit("changeSliderNum");
   display:inline-block;
 }
 .slider-enter-active,.slider-leave-active{
-transition:all 1s linear;
+transition:all 0.6s linear;
 }
 .slider-enter{
  transform: translateX(550px);
@@ -108,7 +106,7 @@ transition:all 1s linear;
 .slider-move{
 
   animation-name: move;
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-timing-function:linear;
   /*animation-iteration-count: infinite;*/
 }

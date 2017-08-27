@@ -42,29 +42,7 @@ export default {
     playPause(){
       this.$store.commit("togglePlayState");
     },
-    album(){
-      this.$http.jsonp('https://c.y.qq.com/v8/fcg-bin/fcg_v8_album_info_cp.fcg', 
-        {
-          params: {
-            albummid: this.albumMid,
-            g_tk: 5381,
-            loginUin: 0,
-            hostUin: 0,
-            format: 'jsonp',
-            inCharset: 'utf8',
-            outCharset: 'utf-8',
-            notice: 0,
-            platform: 'yqq',
-            needNewCode: 0
-          },
-          jsonp:'jsonpCallback'
-        }).then(
-        function(res){
-          console.log(res)
-        },
-        function(){alert("没有找到该专辑")}
-        );
-      },
+
     searchImg(){
       this.$http.jsonp('https://c.y.qq.com/v8/fcg-bin/fcg_v8_album_info_cp.fcg', 
         {
@@ -84,7 +62,7 @@ export default {
         }).then(
         function(res){
           this.songNowImg=res
-          console.log(res)
+          
         },
         function(){alert("没有找到该封面")}
         );
